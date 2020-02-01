@@ -9,12 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+//    IB element lets me referance a ui element, I did it with the old control+click on the ui element to the text editor
+    
+    @IBOutlet weak var diceImageViewOne: UIImageView!
+    @IBOutlet weak var diceImageViewTwo: UIImageView!
+    
+    let diceArray = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+       
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        diceImageViewOne.image = diceArray[Int.random(in: 0...5)]
+        diceImageViewTwo.image = diceArray[Int.random(in: 0...5)]
+        
     }
-
-
 }
 
